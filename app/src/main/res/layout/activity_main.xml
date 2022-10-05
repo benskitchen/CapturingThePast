@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back1">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/LayoutRepo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintBottom_toTopOf="@id/layoutReference"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutRepoLabel"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/repoLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/repository"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="18sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/repoControls"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintVertical_bias="0.1">
+
+            <Spinner
+                android:id="@+id/spinnerRepo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:background="@drawable/spinner_bg"
+                android:ems="12"
+                android:hint="@string/repo"
+                android:padding="10dp"
+                android:textColor="@color/fontColour"
+                android:textSize="24sp"
+                android:tooltipText="@string/repo_dropdown"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/deleteRepoButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/deleteRepoButton"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="8dp"
+                android:background="#0000"
+                android:contentDescription="@string/remove_items_or_reset_the_repository_list"
+                android:fontFamily="@font/fasolid"
+                android:text="@string/fa_minus"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/addRepoButton"
+                app:layout_constraintStart_toEndOf="@id/spinnerRepo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/addRepoButton"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#0000"
+                android:contentDescription="@string/add_items_to_the_repository_list"
+                android:fontFamily="@font/fasolid"
+                android:text="@string/fa_plus"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/deleteRepoButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutReference"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintBottom_toTopOf="@id/layoutItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutRepo"
+        app:layout_constraintVertical_bias="0.125">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutRefLabel"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/refLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/catalogue_reference"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="18sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutRefEntry"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <EditText
+                android:id="@+id/editTextRef"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edittext_bg"
+                android:ems="20"
+                android:gravity="left"
+                android:hint="@string/e_g_par378_31_3_5"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="8dp"
+                android:text=""
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttonClearRef"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:background="#0000"
+                android:fontFamily="@font/fasolid"
+                android:text="@string/fa_clear"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                app:srcCompat="@android:drawable/ic_notification_clear_all" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutItem"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutSubItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutReference">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutItemEntry"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            >
+
+
+
+            <Button
+                android:id="@+id/buttonDecItem"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:background="#0000"
+                android:contentDescription="@string/decrement_the_item_number"
+                android:fontFamily="@font/fasolid"
+                android:text="@string/fa_minus"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/editTextItem"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextItem"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/edittext_bg"
+                android:ems="14"
+                android:gravity="center"
+                android:hint="@string/item"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/buttonincItem"
+                app:layout_constraintStart_toEndOf="@id/buttonDecItem"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttonincItem"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:background="#0000"
+                android:contentDescription="@string/increment_the_item_number"
+                android:fontFamily="@font/fasolid"
+                android:text="@string/fa_plus"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/editTextItem"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutItemLabel"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/itemLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/item_number"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="18sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutSubItem"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutDetached"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutItem">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutSubItemLabel"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/subItemLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/sub_item_e_g_pages_of_the_document"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutSubItemEntry"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            >
+
+            <Button
+                android:id="@+id/buttonDecSubItem"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:background="#0000"
+                android:contentDescription="@string/decrement_the_sub_item_number"
+                android:fontFamily="@font/fasolid"
+                android:text="@string/fa_minus"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/editTextSubItem"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextSubItem"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/edittext_bg"
+                android:ems="14"
+                android:gravity="center"
+                android:hint="@string/sub_item"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/buttonincSubItem"
+                app:layout_constraintStart_toEndOf="@id/buttonDecSubItem"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttonincSubItem"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:background="#0000"
+                android:contentDescription="@string/increment_the_sub_item_number"
+                android:fontFamily="@font/fasolid"
+                android:text="@string/fa_plus"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/editTextSubItem"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutDetached"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintBottom_toTopOf="@id/layoutNote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutSubItem">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDetachedEntry"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            >
+
+            <Button
+                android:id="@+id/buttonDecPart"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:background="#0000"
+                android:contentDescription="@string/decrement_the_detached_part_number"
+                android:fontFamily="@font/fasolid"
+                android:text="@string/fa_minus"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textViewPart"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/textViewPart"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/edittext_bg"
+                android:ems="14"
+                android:gravity="center"
+                android:hint="@string/part"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/buttonIncPart"
+                app:layout_constraintStart_toEndOf="@id/buttonDecPart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttonIncPart"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:background="#0000"
+                android:contentDescription="@string/increment_the_detached_part_number"
+                android:fontFamily="@font/fasolid"
+                android:text="@string/fa_plus"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textViewPart"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutDetachedLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/detachedLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/detached_or_torn_parts_special_cases"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutNote"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="24dp"
+
+        app:layout_constraintBottom_toTopOf="@id/constraintLayoutRes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDetached">
+
+        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--            android:id="@+id/layoutNoteLabel"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="24dp"-->
+        <!--            app:layout_constraintBottom_toTopOf="@id/layoutNoteEntry"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="start"-->
+        <!--                android:text="@string/description_optional_saved_in_the_capture_log"-->
+        <!--                android:textColor="@color/colorPrimaryDarkTrans"-->
+
+        <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintHorizontal_bias="0.0"-->
+        <!--                app:layout_constraintStart_toStartOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent" />-->
+        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutNoteEntry"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/textViewNote"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".75"
+                android:background="@drawable/edittext_bg"
+                android:contentDescription="@string/preview_of_the_current_catalogue_number"
+                android:ems="18"
+                android:hint="@string/note"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="8dp"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="EditableContentDescCheck" />
+            <Button
+                android:id="@+id/buttonClearNote"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:background="#0000"
+                android:fontFamily="@font/fasolid"
+                android:text="@string/fa_clear"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                app:srcCompat="@android:drawable/ic_notification_clear_all" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutRes"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintBottom_toTopOf="@id/layoutActions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutNote">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textViewRef"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#0000"
+                android:contentDescription="@string/preview_of_the_current_catalogue_number"
+                android:ems="18"
+                android:gravity="center"
+                android:text="@string/ref_text"
+                android:textColor="@color/colorPrimaryDarkTrans"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutActions"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+
+
+        android:layout_marginBottom="8dp"
+
+        android:paddingHorizontal="8dp"
+        android:textColor="@color/colorPrimaryDarkTrans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutRes">
+
+        <Button
+            android:id="@+id/cameraButton"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#0000"
+            android:contentDescription="@string/launch_the_camera"
+            android:fontFamily="@font/fasolid"
+            android:text="@string/fa_camera"
+            android:textColor="@color/colorPrimaryDarkTrans"
+            android:textSize="56sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/filesButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/filesButton"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#0000"
+            android:contentDescription="@string/open_the_file_manager"
+
+            android:fontFamily="@font/fasolid"
+            android:text="@string/fa_files"
+            android:textColor="@color/colorPrimaryDarkTrans"
+            android:textSize="56sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/infoButton"
+            app:layout_constraintStart_toEndOf="@id/cameraButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/infoButton"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#0000"
+            android:contentDescription="@string/show_the_information_panel"
+            android:fontFamily="@font/fasolid"
+            android:text="@string/fa_info"
+            android:textColor="@color/colorPrimaryDarkTrans"
+            android:textSize="56sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/filesButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
